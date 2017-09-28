@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Fake Restaurants
@@ -30,7 +30,7 @@ def allRestaurants():
     return render_template('restaurants.html', restaurants=restaurants)
 
 
-@app.route('/restaurants/new')
+@app.route('/restaurants/new', methods=['GET', 'POST'])
 def newRestaurant():
     return render_template('newRestaurant.html')
 
