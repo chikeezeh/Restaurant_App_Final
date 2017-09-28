@@ -16,7 +16,11 @@
       <div>
           <p>
               <a href = '#'>{{restaurant['name']}}</a>
+              <br /><br />
+              <a href="{{url_for('editRestaurant',restaurant_id=1)}}"> Edit</a>
+			  <a href= "{{url_for('deleteRestaurant', restaurant_id = 1)}}"> Delete </a>
           </p>
+
       </div>
       {% endfor %}
   </body>
