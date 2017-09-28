@@ -11,11 +11,11 @@
 
   <body>
       <h1>My favorite Restaurants</h1>
-      <a href ='#'>Create new restaurants</a>
+      <a href ="{{url_for('newRestaurant')}}">Create new restaurants</a>
       {% for restaurant in restaurants %}
       <div>
           <p>
-              {{restaurant['name']}}
+              <a href = '#'>{{restaurant['name']}}</a>
           </p>
       </div>
       {% endfor %}
