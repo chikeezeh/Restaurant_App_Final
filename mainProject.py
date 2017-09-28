@@ -1,45 +1,45 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/restaurants/')
 def allRestaurants():
-    return "This shows all the restaurants"
+    return render_template('restaurants.html')
 
 
 @app.route('/restaurants/new')
 def newRestaurant():
-    return "This makes a new restaurants"
+    return render_template('newRestaurant.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/edit')
 def editRestaurant(restaurant_id):
-    return "This edits restaurants"
+    return render_template('editRestaurant.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/delete')
 def deleteRestaurant(restaurant_id):
-    return "This deletes restaurants"
+    return render_template('deleteRestaurant.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/')
 def restaurantMenu(restaurant_id):
-    return "This shows restaurant menus"
+    return render_template('menu.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/new')
 def newMenuItem(restaurant_id):
-    return "This adds new restaurant menu"
+    return render_template('newMenuItem.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/edit')
 def editMenuItem(restaurant_id, menu_id):
-    return "This edits restaurant menu"
+    return render_template('editMenuItem.html')
 
 
 @app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete')
 def deleteMenuItem(restaurant_id, menu_id):
-    return "This deletes restaurant menu"
+    return render_template('deleteMenuItem.html')
 
 
 if __name__ == '__main__':
