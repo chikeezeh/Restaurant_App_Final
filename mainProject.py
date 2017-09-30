@@ -40,7 +40,7 @@ def editRestaurant(restaurant_id):
     return render_template('editRestaurant.html', restaurant_id=1)
 
 
-@app.route('/restaurants/<int:restaurant_id>/delete')
+@app.route('/restaurants/<int:restaurant_id>/delete', methods=['GET', 'POST'])
 def deleteRestaurant(restaurant_id):
     return render_template('deleteRestaurant.html', restaurants=restaurants)
 
@@ -60,9 +60,10 @@ def editMenuItem(restaurant_id, menu_id):
     return render_template('editMenuItem.html')
 
 
-@app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete')
+@app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete',
+           methods=['GET', 'POST'])
 def deleteMenuItem(restaurant_id, menu_id):
-    return render_template('deleteMenuItem.html')
+    return render_template('deleteMenuItem.html', item=item)
 
 
 if __name__ == '__main__':

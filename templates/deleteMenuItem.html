@@ -1,1 +1,27 @@
-<h1> Delete a menu item</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X_UA_Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <title>Delete Menu Item</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+    {# <script src="js/app.js"></script>#}
+  </head>
+
+  <body>
+      <h1>Are you sure you want to delete {{item['name']}}</h1>
+      <div>
+          <form action = "{{url_for('deleteMenuItem', restaurant_id = 1,menu_id=1)}}" method="post">
+			<input type="submit" value ='Delete'>
+		</form>
+        <p>
+            <a href ="{{url_for('restaurantMenu',restaurant_id=1)}}"> Cancel</a>
+        </p>
+
+
+      </div>
+
+  </body>
+</html>
