@@ -1,1 +1,48 @@
-<h1> Add a new menu to a restaurant</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X_UA_Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <title>New Restaurant</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    {# <script src="js/app.js"></script>#}
+  </head>
+
+  <body>
+      <h1>Create a menu item</h1>
+      <div>
+          <form action = "{{url_for('newMenuItem',restaurant_id=1, menu_id=1)}}" method="post">
+              <p>
+                  Name:
+              </p>
+              <input type = 'text' name = 'name' placeholder="Menu name" required/>
+
+              <p>
+                  Description:
+              </p>
+              <input type = 'text' name = 'description' placeholder="Menu description" required/>
+              <p>
+                  Price:
+              </p>
+              <input type = 'text' name = 'price' placeholder="$0.00" required/>
+              <p>
+                  Course:
+              </p>
+              <input type = 'radio' name = 'course' />Appetizer<br />
+              <input type = 'radio' name = 'course' />Entree<br />
+              <input type = 'radio' name = 'course' />Desert<br />
+              <input type = 'radio' name = 'course' />Beverage<br />
+
+              <br />
+              <input type="submit" value ='Create'>
+
+          </form>
+          <p>
+            <a href = "{{url_for('restaurantMenu',restaurant_id=1)}}">Cancel</a>
+          </p>
+
+      </div>
+
+  </body>
+</html>
