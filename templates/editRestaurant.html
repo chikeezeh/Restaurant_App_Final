@@ -11,13 +11,13 @@
   </head>
 
   <body>
-      <h1>Edit Restaurant </h1>
+      <h1>Edit Restaurant {{restaurant.name}} </h1>
       <div>
-          <form action = "{{url_for('editRestaurant',restaurant_id = 1)}}" method="post">
+          <form action = "{{url_for('editRestaurant',restaurant_id=restaurant.id)}}" method="post">
               <p>
                  New Name:
               </p>
-              <input type = 'text' name = 'name' placeholder="Restaurant to Edit" />
+              <input type = 'text' name = 'name' placeholder="{{restaurant.name}}" />
               <input type="submit" value ='edit'>
 
           </form>
