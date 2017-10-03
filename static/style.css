@@ -1,0 +1,18 @@
+/*overwrite the default blue color for hyperlinks*/
+a {
+  color:#190009 ;
+}
+/*make the horizontal rule thicker*/
+hr {
+  border: 1px solid #7d97ad;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #333333
+}
+h1,
+h3,
+h4 {
+    color: #ffffff;
+}

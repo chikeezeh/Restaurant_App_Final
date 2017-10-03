@@ -7,6 +7,8 @@ from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+BOOTSTRAP_SERVE_LOCAL = True
 Bootstrap(app)
 # The following codes will connect to the database
 # and query it for data, so that it can be presented on the
@@ -143,4 +145,4 @@ def deleteMenuItem(restaurant_id, menu_id):
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=7000)
+    app.run(host='0.0.0.0', port=9000)
