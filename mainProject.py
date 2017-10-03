@@ -51,10 +51,12 @@ def allRestaurants():
 @app.route('/restaurants/new', methods=['GET', 'POST'])
 def newRestaurant():
     if request.method == 'POST':
-        newRestaurant = Restaurant(name=request.form['name'])
-        session.add(newRestaurant)
-        session.commit()
+        if request.form['name']:
+            newRestaurant = Restaurant(name=request.form['name'])
+            session.add(newRestaurant)
+            session.commit()
         return redirect(url_for('allRestaurants'))
+
     else:
         return render_template('newRestaurant.html')
 
@@ -145,4 +147,4 @@ def deleteMenuItem(restaurant_id, menu_id):
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=9000)
+    app.run(host='0.0.0.0', port=4000)
